@@ -24,7 +24,7 @@ const UserHistoryModal = ({ user, onClose }) => {
   useEffect(() => {
     async function fetchHistory() {
       try {
-        const res = await API.get(`/claims/history/${user._id}`);
+        const res = await API.get(`/api/claims/history/${user._id}`);
         setHistory(res.data);
       } catch {
         setHistory([]);
@@ -82,7 +82,7 @@ export default function App() {
   // Fetch leaderboard users
   const fetchUsers = useCallback(async () => {
     try {
-      const res = await API.get("/users/leaderboard");
+      const res = await API.get("/api/users/leaderboard");
       setUsers(res.data.map((u) => ({ ...u, totalPoints: u.totalPoints || 0 })));
     } catch {
       setToastMsg("Failed to load users.");
