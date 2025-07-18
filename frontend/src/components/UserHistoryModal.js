@@ -6,7 +6,7 @@ function UserHistoryModal({ user, onClose }) {
 
   useEffect(() => {
     const fetchHistory = async () => {
-      const res = await API.get(`/claims/history/${user._id}`);
+      const res = await API.get(`/api/claims/history/${user._id}`);
       setHistory(res.data);
     };
     fetchHistory();

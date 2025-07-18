@@ -9,7 +9,7 @@ function ClaimPoints({ users, onClaimed }) {
   const handleClaim = async () => {
     if (!selectedUserId) return;
     try {
-      const res = await API.post(`/claims/${selectedUserId}`);
+      const res = await API.post(`/api/claims/${selectedUserId}`);
       setClaimedPoints(res.data.pointsClaimed);
       onClaimed(); // Notify parent to refresh leaderboard
     } catch (err) {

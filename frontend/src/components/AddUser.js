@@ -7,7 +7,7 @@ function AddUser({ onUserAdded }) {
 
   const handleAdd = async () => {
     if (!name) return;
-    await API.post('/users', { name });
+    await API.post('/api/users', { name });
     setName('');
     onUserAdded();
   };
