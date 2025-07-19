@@ -16,6 +16,10 @@ app.use(express.json()); // ← This MUST come before the routes
 app.use('/api/users', userRoutes);
 app.use('/api/claims', claimRoutes);
 
+app.get('/', (req, res) => {
+  res.send('✅ Leaderboard API is running!');
+});
+
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(process.env.MONGO_URI)
